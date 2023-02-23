@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ruhunuSolar.urls'
+ROOT_URLCONF = 'solar.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ruhunuSolar.wsgi.application'
+WSGI_APPLICATION = 'solar.wsgi.application'
 
 
 # Database
