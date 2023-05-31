@@ -31,7 +31,34 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+  <style>
+    .expand-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .col-md-6 {
+        padding: 30px;
+    }
+    .img-fluid-x{
+      height:20rem;
+      padding-bottom: 3rem;
+    }
+    .icon-box {
+        text-align: center;
+    }
+    .expandable-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .carousel-item{
+      text-align: center;
+    }
+</style>
 </head>
 
 <body>
@@ -49,9 +76,9 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
           <li><a class="nav-link scrollto" href="#about">ABOUT</a></li>
-          <li><a class="nav-link scrollto" href="#products">PRODUCTS</a></li>
-          <li><a class="nav-link scrollto" href="#team">SERVICES</a></li>
           <li><a class="nav-link scrollto" href="#supplier">SUPPLIERS</a></li>
+          <li><a class="nav-link scrollto" href="#products-section">PRODUCTS</a></li>
+          <li><a class="nav-link scrollto" href="#services-section">SERVICES</a></li>
           <li><a class="nav-link scrollto" href="#term">TERMS</a></li>
           <li><a class="nav-link scrollto" href="#contact">CONTACT US </a></li>
         </ul>
@@ -66,7 +93,7 @@
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
         <div class="col-xl-6" style="width: 60%;">
-          <h1>Sri Lanka's Better Solar Solution with Ruhunu Solar</h1>
+          <h1>Sri Lanka's Solution to Solar</h1>
           <h2 id="header-desc">Solar energy is radiant light and heat from the sun. It has been harnessed by humans
             since ancient times using a range of ever-evolving technologies. Solar energy technologies include solar
             heating, solar photovoltaics, solar thermal electricity and solar architecture, which can make considerable
@@ -75,7 +102,7 @@
             Industrial and
             Commercial
             buildings. We have an extensive range of solutions to fit any requirment.</h5>
-          <a href="#about" class="btn-get-started scrollto">OUR SERVICE</a>
+          <a href="#services-section" class="btn-get-started scrollto">OUR SERVICE</a>
         </div>
       </div>
     </div>
@@ -84,39 +111,9 @@
 
   <main id="main">
 
-    <!-- ======= Clients Section ======= -->
-    <section id="supplier" class=" clients">
-      <div class="container" data-aos="zoom-in">
-        <h3 class="text-uppercase text-center pb-4">Our Suppliers</h3>
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/hopergy.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/jinko.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/resun.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/sungrow.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/sofar.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/fronius.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/clients/joca.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <p class="pt-4">We are Authorized Dealers and / or Distributors for an extensive range of products of which some
-          of the
-          manufacturers are listed above.</p>
-      </div>
-    </section><!-- End Clients Section -->
-
     <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
-
+    <section id="supplier" class="about">
+      <div class="container" data-aos="zoom-in">
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-items-stretch">
             <div class="content">
@@ -128,7 +125,8 @@
                 in achieving their goals. Our experience and commitment to excellence have earned us the reputation as
                 the best in the Industry.
               </p>
-              <a href="#products" class="about-btn"><span>our products</span> <i class="bx bx-chevron-right"></i></a>
+              <a href="#products-section" id="our-product-btn"><span>our products</span> <i
+                  class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
@@ -154,9 +152,38 @@
             </div><!-- End .content-->
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <h3 class="text-uppercase text-center pb-4">Our Suppliers</h3>
+        <p class="pt-3 pb-4 text-center">We are Authorized Dealers and / or Distributors for an extensive range of
+          products
+          of which some
+          of the manufacturers are listed below.</p>
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center" style="padding-bottom: 5rem;">
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/hopergy.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/jinko.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/resun.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/sungrow.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/sofar.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/fronius.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/joca.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination" id="swiper-clients"></div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -206,7 +233,7 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Tabs Section ======= -->
-    <section class="tabs">
+    <section class="tabs" id="products-section">
       <div class="container" data-aos="fade-up">
         <h3 class="text-uppercase text-center pb-4">products</h3>
         <p>Below is an overview of the Products, services and solutions Ruhunu Solar Energy Management
@@ -221,108 +248,77 @@
         <div class="row">
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <h4 class="text-capitalize">solar roofs</h4>
-            <p>Solar Roof complements your home's architecture while turning sunlight into electricity. With an
-              integrated Powerwall battery, energy collected during the day is stored and made available any time,
-              effectively turning your home into a personal utility. Glass solar tiles are so durable they are
-              warrantied for the lifetime of your house, or infinity, whichever comes first. Enter your address below to
-              get started.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/solar-roofs.jpg' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">Solar Roof complements your home's architecture while turning sunlight into electricity. With an
+                integrated Powerwall battery, energy collected during the day is stored and made available any time,
+                effectively turning your home into a personal utility. Glass solar tiles are so durable they are
+                warrantied for the lifetime of your house, or infinity, whichever comes first. Enter your address below to
+                get started.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-capitalize">solar hot water</h4>
-            <p>Solar Roof complements your home's architecture while turning sunlight into electricity. With an
-              integrated Powerwall battery, energy collected during the day is stored and made available any time,
-              effectively turning your home into a personal utility. Glass solar tiles are so durable they are
-              warrantied for the lifetime of your house, or infinity, whichever comes first.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/hot-water.jpg' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">Solar Roof complements your home's architecture while turning sunlight into electricity. With an
+                integrated Powerwall battery, energy collected during the day is stored and made available any time,
+                effectively turning your home into a personal utility. Glass solar tiles are so durable they are
+                warrantied for the lifetime of your house, or infinity, whichever comes first.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <h4 class="text-capitalize">inverters</h4>
-            <p>A solar inverter or PV inverter, is a type of electrical converter which converts the variable direct
-              current (DC) output of a photovoltaic (PV) solar panel into a utility frequency alternating current (AC)
-              that can be fed into a commercial electrical grid or used by a local, off-grid electrical network.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/inverters.jpg' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">A solar inverter or PV inverter, is a type of electrical converter which converts the variable direct
+                current (DC) output of a photovoltaic (PV) solar panel into a utility frequency alternating current (AC)
+                that can be fed into a commercial electrical grid or used by a local, off-grid electrical network.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-capitalize">solar water pumps</h4>
-            <p>With the cost of diesel and electricity rising constantly, solar powered water pumps are the perfect
-              alternative for any requirment as these have a low maintenance cost and ensure a long product life. There
-              are several types of pumps available to suit any requirment.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/water-pump.png' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">With the cost of diesel and electricity rising constantly, solar powered water pumps are the perfect
+                alternative for any requirment as these have a low maintenance cost and ensure a long product life. There
+                are several types of pumps available to suit any requirment.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-capitalize">power walls</h4>
-            <p>This is the Battery, On a typical day, Powerwall and solar will meet all of your home's energy needs.
-              When the grid goes down, solar energy will continue to power your home and charge your Powerwall.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/power-walls.jpg' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">This is the Battery, On a typical day, Powerwall and solar will meet all of your home's energy needs.
+                When the grid goes down, solar energy will continue to power your home and charge your Powerwall.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-capitalize">solar panels</h4>
-            <p>Solar panels produce renewable clean energy while securing low utility rates. Our panels exceed industry
-              standards for durability and lifespan.
-              Please contact us for latest Prices.</p>
+            <img src="{% static 'assets/img/products/solarpanels.jpg' %}" class="img-fluid-x" alt="">
+            <div class="expandable-content">
+              <p class="expandable-text">Solar panels produce renewable clean energy while securing low utility rates. Our panels exceed industry
+                standards for durability and lifespan.
+                Please contact us for latest Prices.</p>
+                <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
           </div>
         </div>
-
-        <!-- <ul class="nav nav-tabs row d-flex">
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-              <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block text-capitalize">solar roofs</h4>
-            </a>
-          </li>
-          <li class=" nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-              <i class="ri-body-scan-line"></i>
-              <h4 class="d-none d-lg-block text-capitalize">powerwalls</h4>
-            </a>
-          </li>
-          <li class=" nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-              <i class="ri-sun-line"></i>
-              <h4 class="d-none d-lg-block text-capitalize">invertors</h4>
-            </a>
-          </li>
-          <li class=" nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-              <i class="ri-store-line"></i>
-              <h4 class="d-none d-lg-block text-capitalize">solar panels</h4>
-            </a>
-          </li>
-        </ul> -->
 
         <div class=" tab-content">
           <div class="tab-pane active show" id="tab-1">
             <div class="row">
               <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                <!-- <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat.
-                  </li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
-                    voluptate velit.
-                  </li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat.
-                    Duis
-                    aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro
-                    dolore eu fugiat
-                    nulla
-                    pariatur.</li>
-                </ul> -->
-                <!-- <div style="display: flex;">
-                  <div>
-                    <p>
-                      This is the Battery, On a typical day, Powerwall and solar will meet all of your home's energy
-                      needs.
-                      When the grid goes down, solar energy will continue to power your home and charge your Powerwall.
-                      Please contact us for latest Prices.
-                    </p>
-                  </div>
-                  <div>
-                    <img width="60%" src="{% static 'assets/img/products/sr-2.jpg' %}" alt="">
-                  </div>
-                </div> -->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
                 <img src="assets/img/tabs-1.jpg" alt="" class="img-fluid">
@@ -459,7 +455,7 @@
     </section><!-- End Tabs Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg ">
+    <section id="services-section" class="services section-bg " style="margin-top :-7rem;">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -471,22 +467,23 @@
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <!-- <i class="bi bi-briefcase"></i> -->
-              <h4><a href="#"></a></h4>
+              <i class="bi bi-tools"></i>
+              <h4>Solar Panel Installation</h4>
               <p>Solar panel installation services for homes, businesses, and government institutions</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <!-- <i class="bi bi-card-checklist"></i>
-              <h4><a href="#">Dolor Sitema</a></h4> -->
+              <i class="bi bi-clipboard-check"></i>
+            <h4>Consultation Services</h4>
               <p>Consultation services to help customers choose the right solar panel system for their specific needs
               </p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <!-- <i class="bi bi-bar-chart"></i>
-              <h4><a href="#">Sed ut perspiciatis</a></h4> -->
+              <i class="bi bi-wrench"></i>
+              <h4>Maintenance and Repair</h4>
               <p>Maintenance and repair services to ensure that solar panel systems are functioning properly and
                 efficiently
               </p>
@@ -494,37 +491,37 @@
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <!-- <i class="bi bi-binoculars"></i>
-              <h4><a href="#">Nemo Enim</a></h4> -->
+              <i class="bi bi-cart"></i>
+              <h4>Sales of Solar Products</h4>
               <p>Sales of solar panels, inverters, batteries, and other solar products and accessories</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
-              <!-- <i class="bi bi-brightness-high"></i>
-              <h4><a href="#">Magni Dolore</a></h4> -->
+              <i class="bi bi-currency-dollar"></i>
+              <h4>Financing and Incentives</h4>
               <p>Financing options and information on available incentives and rebates for solar panel installations</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
-              <!-- <i class="bi bi-calendar4-week"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4> -->
+              <i class="bi bi-lightning"></i>
+              <h4>Customized Energy Solutions</h4>
               <p>Customized solar energy solutions for customers with unique energy needs or requirements</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
-              <!-- <i class="bi bi-calendar4-week"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4> -->
+              <i class="bi bi-cloud-check"></i>
+              <h4>Remote Monitoring</h4>
               <p>Remote monitoring and data analytics services to track solar panel system performance and energy
                 production</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
-              <!-- <i class="bi bi-calendar4-week"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4> -->
+              <i class="bi bi-battery-half"></i>
+              <h4>Energy Storage Solutions</h4>
               <p>Energy storage solutions such as battery storage systems for customers looking to store excess solar
                 energy for later use</p>
             </div>
@@ -545,142 +542,39 @@
             including residential, commercial, and government projects.</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <!-- <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul> -->
+        <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+        
+            <div class="carousel-item active">
+              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" style="height: 483px;width: 913px;" alt="">
+            </div>
+        
+            <div class="carousel-item">
+              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" style="height: 483px;width: 913px;" alt="">
+            </div>
+        
+            <div class="carousel-item">
+              <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" style="height: 483px;width: 913px;" alt="">
+            </div>
+        
+            <!-- Add more carousel items as needed -->
+        
           </div>
+        
+          <button class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#2f2f2f"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          
+          <button class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#2f2f2f"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        
         </div>
+        
+        
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 1</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 3</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 2</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 2</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 2</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 3</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 1</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 3</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
 
       </div>
     </section><!-- End Portfolio Section -->
@@ -961,6 +855,76 @@
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>FILL OUT THE FORM & WE'LL BE IN TOUCH SOON!</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>No 42, Dikwella Road, Beliatta, 82400, Sri Lanka</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info@ruhunusolar.lk</p>
+                  <p style="color:transparent;">----</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+94-47-2243199<br>+94-76-4533361</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
     <section id="term" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -1063,164 +1027,6 @@
       </div>
     </section>
 
-    <!-- ======= Team Section ======= -->
-    <!-- <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Team</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="400">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>FILL OUT THE FORM & WE'LL BE IN TOUCH SOON!</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our Address</h3>
-                  <p>No 42, Dikwella Road, Beliatta, 82400, Sri Lanka</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@ruhunusolar.lk</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Us</h3>
-                  <p>+94-47-2243199<br>+94-76-4533361</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -1243,6 +1049,56 @@
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 
+  <script>
+    // Add JavaScript code to handle expand and collapse functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandableContents = document.querySelectorAll('.expandable-content');
+        const expandIcons = document.querySelectorAll('.expand-icon');
+
+        expandableContents.forEach(function(content, index) {
+            const expandIcon = expandIcons[index];
+            const expandableText = content.querySelector('.expandable-text');
+
+            expandableText.style.display = 'none'; // Hide the expandable text initially
+
+            content.addEventListener('click', function() {
+                if (expandableText.style.display === 'none') {
+                    expandableText.style.display = 'block'; // Expand the text when clicked
+                    expandIcon.classList.remove('fa-chevron-down');
+                    expandIcon.classList.add('fa-chevron-up');
+                } else {
+                    expandableText.style.display = 'none'; // Collapse the text when clicked again
+                    expandIcon.classList.remove('fa-chevron-up');
+                    expandIcon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Include jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Activate the carousel
+    $("#portfolioCarousel").carousel();
+
+    // Enable carousel autoplay
+    $("#portfolioCarousel").carousel({
+      interval: 5000 // Set the desired interval in milliseconds (e.g., 5000ms = 5 seconds)
+    });
+
+    // Enable carousel navigation with arrows
+    $(".carousel-control-prev").click(function() {
+      $("#portfolioCarousel").carousel("prev");
+    });
+
+    $(".carousel-control-next").click(function() {
+      $("#portfolioCarousel").carousel("next");
+    });
+  });
+</script>
 </body>
 
 </html>

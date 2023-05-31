@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    # 'bakery',
+    
 ]
 
 MIDDLEWARE = [
@@ -117,6 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# BUILD_DIR = 'build'
+
+# STATIC_ROOT = 'build/static/'
+
+# BAKERY_VIEWS = (
+#     'core.views.IndexBuildView',
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

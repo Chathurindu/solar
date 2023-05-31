@@ -589,6 +589,24 @@ section {
   margin-bottom: 30px;
 }
 
+#our-product-btn {
+  padding: 8px 30px 9px 30px;
+  color: #2f2f2f;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #e03a3c;
+}
+
+#our-product-btn:hover {
+  color: #fff;
+  background: #e03a3c;
+}
+
 .about .content .about-btn {
   padding: 8px 30px 9px 30px;
   color: #fff;
@@ -960,6 +978,14 @@ section {
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+}
+
+/* .swiper-pagination-bullet .swiper-pagination-bullet-active {
+  background: #8a0707 !important;
+} */
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
@@ -2132,8 +2158,8 @@ section {
   text-decoration: none;
 }
 
-#header-desc{
-    font-size: 21px !important;
-    line-height: 1.8rem !important;
-    text-align: justify !important;
+#header-desc {
+  font-size: 21px !important;
+  line-height: 1.8rem !important;
+  text-align: justify !important;
 }
